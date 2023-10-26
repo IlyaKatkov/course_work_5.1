@@ -4,10 +4,10 @@ import os
 from config import JSON_DATA
 
 
-class HeadHunter:
+class HeadHunter_API:
     """Класс для работы с API HeadHunter"""
 
-    _base_url = "https://api.hh.ru/vacancies"
+    API_URL = "https://api.hh.ru/vacancies"
 
     def __init__(self, vacancy_area=100, page=0, per_page=50) -> None:
         """
@@ -36,7 +36,7 @@ class HeadHunter:
                 'employer_id': employer_id,
                 'per_page': self.per_page
             }
-            response = requests.get(self._base_url, params=params)
+            response = requests.get(self.API_URL, params=params)
             if response.status_code == 200:
                 vacancies = response.json()['items']
 

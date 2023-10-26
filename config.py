@@ -1,5 +1,5 @@
-from configparser import ConfigParser
 import os
+from configparser import ConfigParser
 
 # Компании: Авито, Яндекс, МТС Банк, Лаборатория Касперского, Tinkoff, РЖД, Аэрофлот, Альфа-банк, Озон, СБЕР
 employer_ids = [84585, 1740, 4496, 1057, 78638, 23427, 1373, 80, 2180, 3529]

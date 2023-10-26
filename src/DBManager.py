@@ -1,12 +1,13 @@
 import psycopg2
-import json
 import os
+import json
 from config import config, JSON_DATA
 
 
 class DBManager:
     """
     Класс для работы с базой данных
+
     """
 
     def __init__(self):
