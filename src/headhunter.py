@@ -9,7 +9,7 @@ class HeadHunter_API:
 
     API_URL = "https://api.hh.ru/vacancies"
 
-    def __init__(self, vacancy_area=150, page=0, per_page=50) -> None:
+    def __init__(self, vacancy_area=150, page=0, per_page=50):
         """
         Инициализатор экземпляров класса для работы с API
 
@@ -85,7 +85,7 @@ class HeadHunter_API:
         return organized_vacancy_list
 
     @staticmethod
-    def save_vacancies_to_json(vacancy_list: list, filename: str) -> None:
+    def save_vacancies_to_json(vacancy_list: list, filename: str):
         """
         Получает список вакансий и сохраняет его в JSON-файл
 
