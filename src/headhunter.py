@@ -5,16 +5,14 @@ from config import JSON_DATA
 
 
 class HeadHunter_API:
-    """Класс для работы с API HeadHunter"""
+    """Работает с API HeadHunter"""
 
     API_URL = "https://api.hh.ru/vacancies"
 
-    def __init__(self, vacancy_area=100, page=0, per_page=50) -> None:
+    def __init__(self, vacancy_area=150, page=0, per_page=50) -> None:
         """
         Инициализатор экземпляров класса для работы с API
-        :param vacancy_area: область поиска
-        :param page: страница поиска -- по умолчанию 0 (начальная)
-        :param per_page: количество вакансий на страницу
+
         """
         self.vacancy_area = vacancy_area
         self.page = page
@@ -26,8 +24,7 @@ class HeadHunter_API:
     def get_vacancies_by_api(self, employers: list) -> list[dict] or list:
         """
         Выполняет сбор вакансий через API
-        :param employers: список работодателей
-        :return: общий список вакансий выбранных компаний
+
         """
         common_list_vacancies = []
         for employer_id in employers:
@@ -53,8 +50,7 @@ class HeadHunter_API:
     def organize_vacancy_info(vacancy_data: list) -> list:
         """
         Организует данные о вакансиях в определённом виде
-        :param vacancy_data: список вакансий, полученный через API
-        :return: организованный список вакансий
+
         """
         organized_vacancy_list = []
 
@@ -92,8 +88,7 @@ class HeadHunter_API:
     def save_vacancies_to_json(vacancy_list: list, filename: str) -> None:
         """
         Получает список вакансий и сохраняет его в JSON-файл
-        :param vacancy_list: список с вакансиями
-        :param filename: имя файла для сохранения вакансий
+
         """
         filepath = os.path.join(JSON_DATA, filename)
         directory = os.path.dirname(filepath)
